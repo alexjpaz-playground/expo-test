@@ -9,10 +9,9 @@ export default function App() {
   const [sound, setSound] = React.useState();
 
   async function playSound() {
-    console.log('Loading Sound');
     const { sound } = await Audio.Sound.createAsync( require('./assets/foo.mp3')
     );
-    setSound(sound); 
+    setSound(sound);
 
     console.log('Playing Sound');
     await sound.playAsync();
